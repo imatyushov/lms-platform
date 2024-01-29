@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import {satisfies} from "next/dist/lib/semver-noop";
 
 const config = {
   darkMode: ["class"],
@@ -76,6 +75,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+}
 
 export default config
