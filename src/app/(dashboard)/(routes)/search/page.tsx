@@ -1,7 +1,7 @@
 export default function SearchPage() {
     return (
         <div>
-            Search page
+            Страница поиска курсов
         </div>
     )
 }

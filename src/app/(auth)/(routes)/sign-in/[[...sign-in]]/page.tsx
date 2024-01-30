@@ -1,10 +1,9 @@
-import {SignIn, UserButton} from '@clerk/nextjs';
+import { SignIn } from '@clerk/nextjs';
 
 export default function Page() {
     return (
         <div>
-            <UserButton />
-            <SignIn />
+            <SignIn afterSignInUrl='/' />
         </div>
     )
 }

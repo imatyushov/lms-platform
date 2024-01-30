@@ -7,13 +7,16 @@ import { useEffect } from "react";
 export default function Home() {
 
     // useEffect(() => {
-    //     redirect('/sign-up')
+    //     redirect('/sign-up');
+    //
+    //     return () => {
+    //         redirect('/')
+    //     }
     // }, [])
 
     return (
         <div>
-            DASHBOARD
-            <UserButton afterSignOutUrl={'/'}/>
+            Дашборд
             <UserProfile/>
         </div>
     )
