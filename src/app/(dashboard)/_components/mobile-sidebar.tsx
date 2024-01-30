@@ -3,6 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Sidebar from "@/app/(dashboard)/_components/sidebar";
 
 export default function MobileSidebar() {
+
     return (
         <Sheet>
             <SheetTrigger className='md:hidden pr-4 hover:opacity-75 transition'>
