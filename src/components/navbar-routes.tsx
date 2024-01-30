@@ -1,7 +1,11 @@
 'use client';
 
-export default function NavbarRoutes() {
-    return (<div>
+import { UserButton } from "@clerk/nextjs";
 
-    </div>)
+export default function NavbarRoutes() {
+    return (
+        <div className='flex gap-x-2 ml-auto'>
+            <UserButton />
+        </div>
+    )
 }
