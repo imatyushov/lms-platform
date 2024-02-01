@@ -1,6 +1,7 @@
 "use client";
 
 import * as z from "zod";
+import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
@@ -17,6 +18,7 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
     title: z.string().min(1, {
@@ -33,10 +35,18 @@ export default function CreatePage()  {
         },
     });
 
+
     const { isSubmitting, isValid } = form.formState;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+        try {
+            const response = await axios.post('api/course', values);
+            router.push(`teacher/courses/${response.data.id}`);
+            toast.success('Курс создан')
+        }
+        catch (error) {
+            toast.error('Произошла ошибка при создании курса')
+        }
     }
 
     return (
@@ -54,11 +64,11 @@ export default function CreatePage()  {
                         className="space-y-8 mt-8"
                     >
                         <FormField
-                            name="название"
+                            name="title"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>
-                                        Course title
+                                        Название курса
                                     </FormLabel>
                                     <FormControl>
                                         <Input
